@@ -1,0 +1,26 @@
+sass will use preprocessor to compile the scss to css.
+
+property Declartions:
+    properties are declare as $size: 100
+    sample:
+    .circle{
+        $size: 100px;
+        width: $size;
+        height: $size;
+        border-radius: $size/2
+    }
+
+placeHolder declarations:
+
+$<varibleName>: <propertyValue> !default;
+IN above case the value for the above property will append if varibaleName value is null or false;
+
+$<varibaleName>: <propertyValue> !global;
+The above !global is used to change the value of the global variable at local scope.
+
+
+Interpolation 
+Interapolation happens everywhere in sass just wrap an expression between #{};
+ #{ <varibaleName>}
+
+ 

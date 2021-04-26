@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            margin: 0px;
+            padding: 0px;
+        }
+        section{
+            border: 2px solid RGB(30%, 50%, 20%);
+            padding: 10px;
+            height: 500px;
+        }
+        #absolute > #firstEle{
+            height: 150px;
+            width: 150px;
+            background-color: orange;
+        }
+        #absolute > #secondEle{
+            height: 150px;
+            width: 150px;
+            background-color: green;
+            position: absolute;
+            top: 100px;
+            left:100px
+        }
+
+        #relative > #firstEle{
+            height: 150px;
+            width: 150px;
+            background-color: orange;
+            /* margin-left: 50%; */
+            position: absolute;
+            left: 100px;
+            /* float: right; */
+        }
+        #relative > #secondEle{
+            height: 150px;
+            width: 150px;
+            background-color: green;
+            position: relative;
+            top: 100px;
+            left:100px
+        }
+    </style>
+</head>
+<body>
+    <section id="absolute">
+        <h1>Absolute Positioning</h1>
+        <div id="firstEle"></div>
+        <div id="secondEle"></div>
+        <!-- Position Absolute takes the topleft as origin-->
+    </section>
+    <section id="relative">
+        <h1>Relative Positioning</h1>
+        <div id="firstEle"></div>
+        <div id="secondEle"></div>
+        <!-- Relative position takes the next to it's sibling element as origin if any parent elements not delcared\
+        any position property else the above position property's  origin will take as origin-->
+    </section>
+</body>
+</html>

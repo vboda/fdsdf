@@ -1,0 +1,1 @@
+window.alert('regular script loaded');

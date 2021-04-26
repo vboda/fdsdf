@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>console.log('Loading defer script')</script>
+    <script src="./defer.js" defer></script>
+    <script>console.log('Loading async script')</script>
+    <script src="./async.js" async></script>
+    <script>console.log('Loading regular script')</script>
+    <script src="./regular.js"></script>
+    <script>
+        for(let i = 0; i < 100000; i++){
+            console.log('lopping');
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
