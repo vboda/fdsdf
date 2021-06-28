@@ -1,0 +1,57 @@
+<p>app works!</p>
+<ng-template [ngIf] = 'true'>
+    <div>VInay</div>
+</ng-template>
+
+<ng-container *ngFor="let item of items"> {{item}}</ng-container>
+
+
+<div *ngIf='false else content'>
+    <div>Loading content in div</div>
+</div>
+<ng-template #content> 
+    <div>Loading content in ng template</div>
+</ng-template>
+
+<!-- internally it the above happens as below use this way -->
+<ng-template [ngIf]='false' [ngIfElse]='content'>
+    <div>
+        <div>
+            Loading content in div
+        </div>
+    </div>
+</ng-template>
+
+<!-- ng Container is used -->
+<!-- <div *ngIf='lessons' *ngFor="let lesson of lessons">
+
+</div> -->
+<!-- The above throws error due to using of multiple structural directives on element -->
+<!-- To fix this -->
+<div *ngIf="lessons">
+    <div *ngFor="let lesson of lessons">
+        {{lesson}}
+    </div>
+</div>
+
+<!-- Above works fine but instead of loading multiple div we can use ng container -->
+<ng-container *ngIf="lessons">
+    <div *ngFor="let lesson of lessons">
+        {{lesson}}
+    </div>
+</ng-container>
+
+<!-- we can also load content in ng container using ngTemplateOutlet directive -->
+<ng-container *ngTemplateOutlet="content"></ng-container>
+
+
+<!--  -->
+<ng-template #estimateTemplate let-lessonsCounter="estimate">
+    <div> Approximately {{lessonsCounter}} lessons ...</div>
+</ng-template>
+<ng-container 
+   *ngTemplateOutlet="estimateTemplate;context:ctx">
+</ng-container>
+
+
+<!-- https://blog.angular-university.io/angular-ng-template-ng-container-ngtemplateoutlet/ -->
